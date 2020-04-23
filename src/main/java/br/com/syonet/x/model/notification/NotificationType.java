@@ -1,0 +1,33 @@
+package br.com.syonet.x.model.notification;
+
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+
+import br.com.syonet.x.model.StringDef;
+
+@StringDef( { NotificationType.SCHEDULING, NotificationType.OPPORTUNITY_CREATION, NotificationType.SMS_RECEIVED,
+        NotificationType.OPPORTUNITY_COMMENT, NotificationType.CUSTOMER_CHANGE, NotificationType.EMAIL_READ,
+        NotificationType.CUSTOMER_OPPORTUNITY_CREATION, NotificationType.CUSTOMER_OPPORTUNITY_STATUS,
+        NotificationType.CUSTOMER_OPPORTUNITY_CHANGE, NotificationType.EMAIL, NotificationType.SCHEDULING_CREATION,
+        NotificationType.SCHEDULING_ACCOMPLISHED, NotificationType.SCHEDULING_NOT_ACCOMPLISHED,
+        NotificationType.OPPORTUNITY_CHANGE_USER, NotificationType.SCHEDULING_CHANGE_USER,
+        NotificationType.OPPORTUNITIES_UPDATED } )
+@Retention( RetentionPolicy.SOURCE )
+public @interface NotificationType {
+    String CUSTOMER_CHANGE = "CUSTOMER_CHANGE";
+    String CUSTOMER_OPPORTUNITY_CREATION = "CUSTOMER_OPPORTUNITY_CREATION";
+    String CUSTOMER_OPPORTUNITY_STATUS = "CUSTOMER_OPPORTUNITY_STATUS";
+    String CUSTOMER_OPPORTUNITY_CHANGE = "CUSTOMER_OPPORTUNITY_CHANGE";
+    String EMAIL = "EMAIL";
+    String EMAIL_READ = "EMAIL_READ";
+    String OPPORTUNITY_COMMENT = "OPPORTUNITY_COMMENT";
+    String OPPORTUNITY_CREATION = "OPPORTUNITY_CREATION";
+    String OPPORTUNITY_CHANGE_USER = "OPPORTUNITY_CHANGE_USER";
+    String OPPORTUNITIES_UPDATED = "OPPORTUNITIES_UPDATED";
+    String SCHEDULING = "SCHEDULING";
+    String SCHEDULING_CREATION = "SCHEDULING_CREATION";
+    String SCHEDULING_CHANGE_USER = "SCHEDULING_CHANGE_USER";
+    String SCHEDULING_ACCOMPLISHED = "SCHEDULING_ACCOMPLISHED";
+    String SCHEDULING_NOT_ACCOMPLISHED = "SCHEDULING_NOT_ACCOMPLISHED";
+    String SMS_RECEIVED = "SMS_RECEIVED";
+}

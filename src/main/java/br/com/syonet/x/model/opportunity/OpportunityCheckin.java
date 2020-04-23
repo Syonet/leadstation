@@ -1,8 +1,8 @@
-package br.com.syonet.x.model.location;
+package br.com.syonet.x.model.opportunity;
 
 import java.io.Serializable;
 
-public class Location implements Serializable {
+public class OpportunityCheckin implements Serializable {
     /**
 	 * 
 	 */
