@@ -15,16 +15,16 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface OpportunityFileAPICalls {
-    @GET( "opportunities/{id}/files" )
+    @GET( "api/v1/opportunities/{id}/files" )
     Call< ArrayList< OpportunityFile > > getFiles ( @Path( "id" ) UUID opportunityId );
 
-    @PUT( "opportunities/{id}/files" )
+    @PUT( "api/v1/opportunities/{id}/files" )
     Call< OpportunityFile > saveFile ( @Path( "id" ) UUID opportunityId, @Query( "fileName" ) String fileName,
                                        @Body RequestBody body );
 
-    @DELETE( "opportunities/files/{id}" )
+    @DELETE( "api/v1/opportunities/files/{id}" )
     Call< Void > deleteFile ( @Path( "id" ) UUID id );
 
-    @GET( "opportunities/files/{id}" )
+    @GET( "api/v1/opportunities/files/{id}" )
     Call< ResponseBody > downloadFile ( @Path( "id" ) UUID id );
 }

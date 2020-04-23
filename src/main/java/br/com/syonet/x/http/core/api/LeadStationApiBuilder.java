@@ -73,7 +73,7 @@ public class LeadStationApiBuilder {
 	}
 
 	private <R> R build(Class<R> clazz) {
-		return APICore.create(clazz, 4, url, token, useSslSocketFactory);
+		return APICore.create(clazz, 51000, url, token, useSslSocketFactory);
 	}
 
 	public UserAPI user() {

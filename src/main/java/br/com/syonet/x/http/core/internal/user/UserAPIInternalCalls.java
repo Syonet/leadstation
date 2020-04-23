@@ -5,6 +5,6 @@ import retrofit2.http.POST;
 import retrofit2.http.Path;
 
 public interface UserAPIInternalCalls {
-    @POST( "users/{email}/resetpassword" )
+    @POST( "i/v1/users/{email}/resetpassword" )
     Call< Void > sendPasswordRecoveryEmail ( @Path( "email" ) String email );
 }

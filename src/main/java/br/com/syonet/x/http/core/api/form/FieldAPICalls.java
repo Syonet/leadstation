@@ -9,9 +9,9 @@ import retrofit2.http.GET;
 import retrofit2.http.Path;
 
 public interface FieldAPICalls {
-    @GET( "forms/{formType}/fields" )
+    @GET( "api/v1/forms/{formType}/fields" )
     Call< ArrayList< Field > > getFields ( @Path( "formType" ) @FormType String formType );
 
-    @GET( "forms/{formType}/fields/filters" )
+    @GET( "api/v1/forms/{formType}/fields/filters" )
     Call< ArrayList< Field > > getFilterFields ( @Path( "formType" ) @FormType String formType );
 }

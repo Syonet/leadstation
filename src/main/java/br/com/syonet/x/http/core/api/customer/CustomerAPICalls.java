@@ -24,57 +24,57 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface CustomerAPICalls {
-    @GET( "customers" )
+    @GET( "api/v1/customers" )
     Call< List< Customer > > getCustomers ( @Query( "type" ) String type, @Query( "page" ) int page );
 
-    @GET( "customers/{id}" )
+    @GET( "api/v1/customers/{id}" )
     Call< Customer > getCustomer ( @Path( "id" ) UUID id );
 
-    @GET( "customers/search" )
+    @GET( "api/v1/customers/search" )
     Call< List< Customer > > search ( @Query( "query" ) String name, @Query( "type" ) String type );
 
-    @POST( "customers" )
+    @POST( "api/v1/customers" )
     Call< Customer > createCustomer ( @Body JsonObject body );
 
-    @PATCH( "customers/{id}" )
+    @PATCH( "api/v1/customers/{id}" )
     Call< Customer > patchCustomer ( @Path( "id" ) UUID id, @Body JsonObject body );
 
-    @PUT( "customers/{id}" )
+    @PUT( "api/v1/customers/{id}" )
     Call< Customer > putCustomer ( @Path( "id" ) UUID id, @Body JsonObject body );
 
-    @GET( "customers/{id}/persons" )
+    @GET( "api/v1/customers/{id}/persons" )
     Call< List< Customer > > getPersons ( @Path( "id" ) UUID id );
 
-    @POST( "customers/{id}/comments" )
+    @POST( "api/v1/customers/{id}/comments" )
     Call< Void > createComment ( @Path( "id" ) UUID customerId, @Body JsonObject body );
 
-    @PUT( "customers/{id}/avatar" )
+    @PUT( "api/v1/customers/{id}/avatar" )
     Call< Customer > uploadAvatar ( @Path( "id" ) UUID id, @Body RequestBody body );
 
-    @DELETE( "customers/{id}/avatar" )
+    @DELETE( "api/v1/customers/{id}/avatar" )
     Call< Customer > deleteAvatar ( @Path( "id" ) UUID id );
 
-    @GET( "customers/{id}/following" )
+    @GET( "api/v1/customers/{id}/following" )
     Call< Boolean > isFollowing ( @Path( "id" ) UUID id );
 
-    @PUT( "customers/{id}/following" )
+    @PUT( "api/v1/customers/{id}/following" )
     Call< Void > follow ( @Path( "id" ) UUID id );
 
-    @DELETE( "customers/{id}/following" )
+    @DELETE( "api/v1/customers/{id}/following" )
     Call< Void > unfollow ( @Path( "id" ) UUID id );
 
-    @POST( "customers/{id}/phonecalls" )
+    @POST( "api/v1/customers/{id}/phonecalls" )
     Call< PhoneCall > registerPhoneCall ( @Path( "id" ) UUID id, @Body PhoneCall phoneCall );
 
-    @POST( "customers/{id}/whatsapps" )
+    @POST( "api/v1/customers/{id}/whatsapps" )
     Call< WhatsApp > registerWhatsApp ( @Path( "id" ) UUID id, @Body WhatsApp whatsApp );
 
-    @POST( "customers/{id}/sms" )
+    @POST( "api/v1/customers/{id}/sms" )
     Call< Sms > sendSms ( @Path( "id" ) UUID id, @Body Sms sms );
 
-    @POST( "customers/{id}/emails" )
+    @POST( "api/v1/customers/{id}/emails" )
     Call< Email > sendEmail ( @Path( "id" ) UUID id, @Body MultipartBody body );
 
-    @GET( "customers/{id}/statistics" )
+    @GET( "api/v1/customers/{id}/statistics" )
     Call< CustomerStatistics > getStatistics ( @Path( "id" ) UUID id );
 }

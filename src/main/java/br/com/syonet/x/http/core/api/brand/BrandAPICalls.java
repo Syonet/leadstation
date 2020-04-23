@@ -7,6 +7,6 @@ import retrofit2.http.GET;
 import retrofit2.http.Path;
 
 public interface BrandAPICalls {
-    @GET( "brands/{brand}/models" )
+    @GET( "api/v1/brands/{brand}/models" )
     Call< List< String > > getModels ( @Path( "brand" ) String brand );
 }

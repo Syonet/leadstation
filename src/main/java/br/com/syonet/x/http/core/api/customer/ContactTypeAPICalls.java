@@ -7,6 +7,6 @@ import retrofit2.http.GET;
 import retrofit2.http.Query;
 
 public interface ContactTypeAPICalls {
-    @GET( "customers/contacts/types" )
+    @GET( "api/v1/customers/contacts/types" )
     Call< List< String > > search ( @Query( "search" ) String search );
 }

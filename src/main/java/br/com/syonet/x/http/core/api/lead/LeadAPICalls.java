@@ -15,15 +15,15 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface LeadAPICalls {
-    @GET( "leads/{id}" )
+    @GET( "api/v1/leads/{id}" )
     Call< Lead > getLead ( @Path( "id" ) UUID id );
 
-    @GET( "leads" )
+    @GET( "api/v1/leads" )
     Call< List< Lead > > getLeads ( @Query( "status" ) @LeadStatus String status, @Query( "page" ) int page,
                                     @Query( "orderBy" ) String orderBy, @Query( "orderType" ) String orderType,
                                     @Query( "to" ) String to, @Query( "from" ) String from,
                                     @Query( "sourceId" ) Integer sourceId );
 
-    @PATCH( "leads/{id}" )
+    @PATCH( "api/v1/leads/{id}" )
     Call< Lead > patchLead ( @Path( "id" ) UUID id, @Body JsonObject body );
 }

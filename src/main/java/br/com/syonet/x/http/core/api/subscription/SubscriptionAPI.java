@@ -12,7 +12,7 @@ public class SubscriptionAPI {
     	this.api = api;
     }
 
-    public Subscription getSubscription ( String authorization ) throws APICoreException, AppException {
-        return executeCall( api.getSubscription( authorization ) ).getContent();
+    public Subscription getSubscription () throws APICoreException, AppException {
+        return executeCall( api.getSubscription() ).getContent();
     }
 }

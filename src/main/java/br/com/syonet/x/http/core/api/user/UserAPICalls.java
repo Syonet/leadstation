@@ -19,27 +19,27 @@ import retrofit2.http.PUT;
 import retrofit2.http.Query;
 
 public interface UserAPICalls {
-    @GET( "users/me" )
+    @GET( "api/v1/users/me" )
     Call< User > getCurrentUser ();
 
-    @GET( "users" )
+    @GET( "api/v1/users" )
     Call< ArrayList< User > > getUsers ();
 
-    @PATCH( "users/me" )
+    @PATCH( "api/v1/users/me" )
     Call< User > saveUser ( @Body JsonObject body );
 
-    @PUT( "users/me/avatar" )
+    @PUT( "api/v1/users/me/avatar" )
     Call< User > uploadAvatar ( @Body RequestBody body );
 
-    @DELETE( "users/me/avatar" )
+    @DELETE( "api/v1/users/me/avatar" )
     Call< User > deleteAvatar ();
 
-    @GET( "users/me/mobiles" )
+    @GET( "api/v1/users/me/mobiles" )
     Call< ArrayList< UserMobile > > getUserMobiles ();
 
-    @PUT( "users/me/mobiles" )
+    @PUT( "api/v1/users/me/mobiles" )
     Call< Void > saveUserMobiles ( @Body JsonArray body );
 
-    @GET( "users/me/statistics" )
+    @GET( "api/v1/users/me/statistics" )
     Call< UserStatistics > getStatistics ( @Query( "usersId" ) Set< Integer > usersId );
 }

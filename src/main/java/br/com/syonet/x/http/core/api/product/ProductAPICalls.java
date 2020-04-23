@@ -9,9 +9,9 @@ import retrofit2.http.GET;
 import retrofit2.http.Query;
 
 public interface ProductAPICalls {
-    @GET( "products" )
+    @GET( "api/v1/products" )
     Call< ArrayList< Product > > getProducts ();
 
-    @GET( "products" )
+    @GET( "api/v1/products" )
     Call< List< Product > > search ( @Query( "description" ) String description );
 }

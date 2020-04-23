@@ -7,6 +7,6 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 
 public interface TeamAPICalls {
-    @GET( "teams" )
+    @GET( "api/v1/teams" )
     Call< ArrayList< Team > > getTeams ();
 }

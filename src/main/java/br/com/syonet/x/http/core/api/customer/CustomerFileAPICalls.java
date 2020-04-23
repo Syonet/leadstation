@@ -15,16 +15,16 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface CustomerFileAPICalls {
-    @GET( "customers/{id}/files" )
+    @GET( "api/v1/customers/{id}/files" )
     Call< ArrayList< CustomerFile > > getFiles ( @Path( "id" ) UUID customerId );
 
-    @PUT( "customers/{id}/files" )
+    @PUT( "api/v1/customers/{id}/files" )
     Call< CustomerFile > saveFile ( @Path( "id" ) UUID customerId, @Query( "fileName" ) String fileName,
                                     @Body RequestBody body );
 
-    @DELETE( "customers/files/{id}" )
+    @DELETE( "api/v1/customers/files/{id}" )
     Call< Void > deleteFile ( @Path( "id" ) UUID id );
 
-    @GET( "customers/files/{id}" )
+    @GET( "api/v1/customers/files/{id}" )
     Call< ResponseBody > downloadFile ( @Path( "id" ) UUID id );
 }

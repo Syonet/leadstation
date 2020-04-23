@@ -7,6 +7,6 @@ import retrofit2.http.GET;
 import retrofit2.http.Query;
 
 public interface CustomerTagAPICalls {
-    @GET( "customers/tags" )
+    @GET( "api/v1/customers/tags" )
     Call< List< String > > searchTag ( @Query( "search" ) String search );
 }

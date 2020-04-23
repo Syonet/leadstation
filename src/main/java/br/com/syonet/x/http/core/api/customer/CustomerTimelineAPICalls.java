@@ -10,7 +10,7 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface CustomerTimelineAPICalls {
-    @GET( "customers/{id}/timeline" )
+    @GET( "api/v1/customers/{id}/timeline" )
     Call< List< CustomerTimeline > > getTimeline ( @Path( "id" ) UUID id, @Query( "types" ) List< String > types,
                                                    @Query( "page" ) int page );
 }

@@ -18,26 +18,26 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface SchedulingAPICalls {
-    @GET( "schedules" )
+    @GET( "api/v1/schedules" )
     Call< ArrayList< Scheduling > > getSchedules ( @Query( "startDate" ) String startDate,
                                                    @Query( "endDate" ) String endDate,
                                                    @Query( "usersId" ) Set< Integer > usersId );
 
-    @POST( "schedules" )
+    @POST( "api/v1/schedules" )
     Call< Scheduling > createScheduling ( @Body JsonObject body );
 
-    @PATCH( "schedules/{id}" )
+    @PATCH( "api/v1/schedules/{id}" )
     Call< Scheduling > patchScheduling ( @Path( "id" ) UUID id, @Body JsonObject body );
 
-    @DELETE( "schedules/{id}" )
+    @DELETE( "api/v1/schedules/{id}" )
     Call< Void > deleteScheduling ( @Path( "id" ) UUID id );
 
-    @GET( "schedules/{id}" )
+    @GET( "api/v1/schedules/{id}" )
     Call< Scheduling > getScheduling ( @Path( "id" ) UUID schedulingId );
 
-    @GET( "opportunities/{id}/schedules" )
+    @GET( "api/v1/opportunities/{id}/schedules" )
     Call< ArrayList< Scheduling > > getOpportunitySchedules ( @Path( "id" ) UUID opportunityId );
 
-    @GET( "opportunities/schedules/types" )
+    @GET( "api/v1/opportunities/schedules/types" )
     Call< ArrayList< OpportunitySchedulingType > > getOpportunitySchedulingTypes ();
 }

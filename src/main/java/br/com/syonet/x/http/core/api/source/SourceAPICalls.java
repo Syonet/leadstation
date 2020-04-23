@@ -7,6 +7,6 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 
 public interface SourceAPICalls {
-    @GET( "sources" )
+    @GET( "api/v1/sources" )
     Call< ArrayList< Source > > getSources ();
 }

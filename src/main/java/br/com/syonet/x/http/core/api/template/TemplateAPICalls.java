@@ -8,6 +8,6 @@ import retrofit2.http.GET;
 
 
 public interface TemplateAPICalls {
-    @GET( "templates" )
+    @GET( "api/v1/templates" )
     Call< List< Template > > getTemplates ();
 }

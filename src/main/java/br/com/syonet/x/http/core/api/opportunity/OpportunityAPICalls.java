@@ -25,21 +25,21 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface OpportunityAPICalls {
-    @GET( "opportunities/{id}" )
+    @GET( "api/v1/opportunities/{id}" )
     Call< Opportunity > getOpportunity ( @Path( "id" ) UUID id );
 
-    @GET( "opportunities" )
+    @GET( "api/v1/opportunities" )
     Call< List< Opportunity > > getOpportunities ( @Query( "page" ) int page, @Query( "orderBy" ) String orderBy,
                                                    @Query( "status" ) @OpportunityStatus String status,
                                                    @Query( "funnelId" ) int funnelId );
 
-    @GET( "opportunities" )
+    @GET( "api/v1/opportunities" )
     Call< List< Opportunity > > getOpportunities ( @Query( "page" ) int page, @Query( "orderBy" ) String orderBy,
                                                    @Query( "status" ) @OpportunityStatus String status,
                                                    @Query( "funnelId" ) int funnelId,
                                                    @Query( "phaseId" ) int phaseId );
 
-    @GET( "opportunities" )
+    @GET( "api/v1/opportunities" )
     Call< List< Opportunity > > getOpportunities ( @Query( "page" ) int page,
                                                    @Query( "initialCreatedAt" ) String initialCreatedAt,
                                                    @Query( "finalCreatedAt" ) String finalCreatedAt,
@@ -54,39 +54,39 @@ public interface OpportunityAPICalls {
                                                    @Query( "lossReasonId" ) String lossReasonId,
                                                    @Query( "ignoreUserPreferences" ) boolean ignoreUserPreferences );
 
-    @GET( "customers/{customerId}/opportunities" )
+    @GET( "api/v1/customers/{customerId}/opportunities" )
     Call< ArrayList< Opportunity > > getCustomerOpportunities ( @Path( "customerId" ) UUID customerId );
 
-    @GET( "opportunities/search" )
+    @GET( "api/v1/opportunities/search" )
     Call< List< Opportunity > > search ( @Query( "name" ) String name );
 
-    @PATCH( "opportunities/{id}" )
+    @PATCH( "api/v1/opportunities/{id}" )
     Call< Opportunity > patchOpportunity ( @Path( "id" ) UUID id, @Body JsonObject body );
 
-    @PUT( "opportunities/{id}" )
+    @PUT( "api/v1/opportunities/{id}" )
     Call< Opportunity > putOpportunity ( @Path( "id" ) UUID id, @Body JsonObject body );
 
-    @POST( "opportunities" )
+    @POST( "api/v1/opportunities" )
     Call< Opportunity > createOpportunity ( @Body JsonObject body );
 
-    @POST( "opportunities/{id}/comments" )
+    @POST( "api/v1/opportunities/{id}/comments" )
     Call< OpportunityComment > createComment ( @Path( "id" ) UUID opportunityId, @Body OpportunityComment body );
 
-    @POST( "opportunities/{id}/checkin" )
+    @POST( "api/v1/opportunities/{id}/checkin" )
     Call< OpportunityCheckin > checkin ( @Path( "id" ) UUID opportunityId, @Body OpportunityCheckin body );
 
-    @GET( "opportunities/statistics" )
+    @GET( "api/v1/opportunities/statistics" )
     Call< OpportunityStatistics > getStatistics ( @Query( "initialDate" ) String initialDate,
                                                   @Query( "finalDate" ) String finalDate,
                                                   @Query( "users" ) Set< Integer > users,
                                                   @Query( "funnelId" ) Integer funnelId );
 
-    @GET( "opportunities/{id}/contacts" )
+    @GET( "api/v1/opportunities/{id}/contacts" )
     Call< ArrayList< Customer > > getContacts ( @Path( "id" ) UUID id );
 
-    @PUT( "opportunities/{id}/contacts" )
+    @PUT( "api/v1/opportunities/{id}/contacts" )
     Call< Void > saveContact ( @Path( "id" ) UUID id, @Body JsonObject body );
 
-    @DELETE( "opportunities/{opportunityId}/contacts/{contactId}" )
+    @DELETE( "api/v1/opportunities/{opportunityId}/contacts/{contactId}" )
     Call< Void > deleteContact ( @Path( "opportunityId" ) UUID opportunityId, @Path( "contactId" ) UUID contactId );
 }

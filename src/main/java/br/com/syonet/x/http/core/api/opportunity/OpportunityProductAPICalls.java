@@ -13,17 +13,17 @@ import retrofit2.http.POST;
 import retrofit2.http.Path;
 
 public interface OpportunityProductAPICalls {
-    @GET( "opportunities/{id}/products" )
+    @GET( "api/v1/opportunities/{id}/products" )
     Call< List< OpportunityProduct > > getOpportunityProducts ( @Path( "id" ) UUID opportunityId );
 
-    @DELETE( "opportunities/products/{id}" )
+    @DELETE( "api/v1/opportunities/products/{id}" )
     Call< Void > deleteOpportunityProduct ( @Path( "id" ) UUID opportunityProductId );
 
-    @POST( "opportunities/{id}/products" )
+    @POST( "api/v1/opportunities/{id}/products" )
     Call< OpportunityProduct > createOpportunityProduct ( @Path( "id" ) UUID opportunityId,
                                                           @Body OpportunityProduct body );
 
-    @PATCH( "opportunities/products/{id}" )
+    @PATCH( "api/v1/opportunities/products/{id}" )
     Call< OpportunityProduct > updateOpportunityProduct ( @Path( "id" ) UUID opportunityProductId,
                                                           @Body OpportunityProduct body );
 }

@@ -13,9 +13,9 @@ import retrofit2.http.POST;
 import retrofit2.http.Path;
 
 public interface PhaseAPICalls {
-    @GET( "phases" )
+    @GET( "api/v1/phases" )
     Call< ArrayList< Phase > > getPhases ();
 
-    @POST( "opportunities/{opportunityId}/phases/triggers" )
+    @POST( "api/v1/opportunities/{opportunityId}/phases/triggers" )
     Call< Void > sendTrigger ( @Path( "opportunityId" ) UUID opportunityId, @Body JsonElement body );
 }

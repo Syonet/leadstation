@@ -7,6 +7,6 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 
 public interface LossReasonAPICalls {
-    @GET( "lossreasons" )
+    @GET( "api/v1/lossreasons" )
     Call< List< LossReason > > getLossReasons ();
 }

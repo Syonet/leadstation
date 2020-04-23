@@ -10,7 +10,7 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface OpportunityTimelineAPICalls {
-    @GET( "opportunities/{id}/timeline" )
+    @GET( "api/v1/opportunities/{id}/timeline" )
     Call< List< OpportunityTimeline > > getTimeline ( @Path( "id" ) UUID id, @Query( "types" ) List< String > types,
                                                       @Query( "page" ) int page );
 }

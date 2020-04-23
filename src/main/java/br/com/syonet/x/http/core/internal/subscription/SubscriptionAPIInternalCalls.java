@@ -8,6 +8,6 @@ import retrofit2.http.Body;
 import retrofit2.http.POST;
 
 public interface SubscriptionAPIInternalCalls {
-    @POST( "subscription" )
+    @POST( "i/v1/subscription" )
     Call< Subscription > createSubscription ( @Body JsonObject jsonObject );
 }

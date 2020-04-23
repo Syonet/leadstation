@@ -11,15 +11,15 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface NotificationAPICalls {
-    @GET( "notifications" )
+    @GET( "api/v1/notifications" )
     Call< List< Notification > > getNotifications ( @Query( "page" ) int page );
 
-    @PUT( "notifications/{id}/read" )
+    @PUT( "api/v1/notifications/{id}/read" )
     Call< Notification > readNotification ( @Path( "id" ) UUID id );
 
-    @PUT( "notifications/read" )
+    @PUT( "api/v1/notifications/read" )
     Call< Void > readAllNotifications ();
 
-    @GET( "notifications/unread" )
+    @GET( "api/v1/notifications/unread" )
     Call< Integer > getUnreadCount ();
 }
