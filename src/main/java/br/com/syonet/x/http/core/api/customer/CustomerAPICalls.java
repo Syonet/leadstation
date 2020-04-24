@@ -54,6 +54,9 @@ public interface CustomerAPICalls {
     @DELETE( "api/v1/customers/{id}/avatar" )
     Call< Customer > deleteAvatar ( @Path( "id" ) UUID id );
 
+    @DELETE( "api/v1/customers/{id}" )
+    Call< Void > delete( @Path( "id" ) UUID id );
+
     @GET( "api/v1/customers/{id}/following" )
     Call< Boolean > isFollowing ( @Path( "id" ) UUID id );
 

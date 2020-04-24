@@ -67,6 +67,10 @@ public class CustomerAPI {
         return executeCall( this.api.getPersons( companyId ) ).getContent();
     }
 
+    public void deleteCustomer( UUID customerId ) throws APICoreException, AppException {
+        executeCall( this.api.delete( customerId ) ).getContent();
+    }
+
     public void createComment ( UUID customerId, String comment ) throws APICoreException, AppException {
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty( "comment", comment );
