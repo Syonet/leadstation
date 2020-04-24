@@ -36,7 +36,7 @@ public class API {
                 errorStr = errorBody.string();
             }
 
-            if ( errorStr == null || errorStr.trim().isEmpty() ) {
+            if ( errorStr != null && !errorStr.trim().isEmpty() ) {
                 apiError = GsonUtils.getGson().fromJson( errorStr, APIError.class );
             } else {
                 apiError = new APIError();
